@@ -73,7 +73,7 @@ export default function App() {
       })
       .finally(() => {
         setSpinnerOn(false);
-      });
+      })
   };
 
   const getArticles = async () => {
