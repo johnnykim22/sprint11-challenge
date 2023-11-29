@@ -40,7 +40,7 @@ export default function App() {
   };
   const redirectToArticles = () => {
     navigate("/articles");
-  };
+  }
 
   
   

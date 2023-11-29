@@ -15,7 +15,7 @@ export default function ArticleForm({
   const [values, setValues] = useState(initialFormValues);
 
   useEffect(() => {
-    console.log(currentArticle);
+   
 
     if (currentArticleId) {
       console.log(articles);
@@ -43,7 +43,7 @@ export default function ArticleForm({
       console.log(currentArticle);
       console.log(currentArticleId);
     } else {
-      console.log("post");
+     
       postArticle(values);
     }
   };
