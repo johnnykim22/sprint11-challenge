@@ -25,6 +25,7 @@ const RequireAuth = ({ children }) => {
   return children;
 };
 
+
 export default function App() {
   // ✨ MVP can be achieved with these states
   const [message, setMessage] = useState("");
@@ -41,6 +42,8 @@ export default function App() {
     navigate("/articles");
   };
 
+  
+  
   const logout = () => {
     // ✨ implement
     // If a token is in local storage it should be removed,
@@ -76,6 +79,9 @@ export default function App() {
       })
   };
 
+  
+  
+  
   const getArticles = async () => {
     let token = localStorage.getItem("token");
 
@@ -88,7 +94,7 @@ export default function App() {
           "Content-type": "application/json",
           "Authorization": token,
         },
-      }); //I did not send the token
+      }); 
       const {articles,message} = data
     setArticles(articles);
     setMessage(message)
@@ -109,7 +115,7 @@ export default function App() {
     // to inspect the response from the server.
     
     let token = localStorage.getItem("token");
-
+      
     if (!token) {
       redirectToLogin();
       return; 
@@ -127,8 +133,7 @@ export default function App() {
       setMessage(data.message);
       setArticles([...articles, data.article]);
    
-  
-    } catch (err) {
+     } catch (err) {
       console.log(`Error : ${err.message}`);
       
       if (err.response && err.response.status === 401) {
@@ -138,6 +143,8 @@ export default function App() {
     }
   };
 
+  
+  
   const updateArticle = async({ article_id, article }) => {
     let token = localStorage.getItem("token");
     
@@ -153,7 +160,6 @@ export default function App() {
           "Authorization": token,
         },
       });
-  
       
       setArticles(articles.map(a => a.article_id === article_id ? data.article : a));
       setCurrentArticleId(null); // Reset the current article ID
@@ -167,6 +173,9 @@ export default function App() {
     }
   };
 
+  
+  
+  
   const deleteArticle = async (article_id) => {
     let token = localStorage.getItem("token");
     
@@ -234,7 +243,7 @@ export default function App() {
                     articles={articles}
                     deleteArticle={deleteArticle}
                     setCurrentArticleId={setCurrentArticleId}
-                    // ... any other props Articles needs
+                    currentArticleId={currentArticleId}
                     getArticles={getArticles}
                   />
                 </>
