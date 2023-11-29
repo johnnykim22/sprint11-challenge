@@ -206,7 +206,7 @@ export default function App() {
   
 
   return (
-    // ✨ fix the JSX: `Spinner`, `Message`, `LoginForm`, `ArticleForm` and `Articles` expect props ❗
+    
     <>
       <Spinner on={spinnerOn} />
       <Message message={message} />
