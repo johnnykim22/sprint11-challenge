@@ -77,10 +77,6 @@ export default function App() {
   };
 
   const getArticles = async () => {
-  
-
-  
-
     let token = localStorage.getItem("token");
 
     if (!token) {
@@ -230,7 +226,7 @@ export default function App() {
                     updateArticle={updateArticle}
                     currentArticle={{title:"",text:"",topic:""}}
                     articles={articles}
-                    
+                    setCurrentArticleId={setCurrentArticleId}
                     currentArticleId={currentArticleId}
                     // ... any other props ArticleForm needs
                   />
