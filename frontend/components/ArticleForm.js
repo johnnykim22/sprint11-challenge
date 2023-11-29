@@ -33,7 +33,7 @@ export default function ArticleForm({
     const { id, value } = evt.target;
 
     setValues({ ...values, [id]: value });
-  };
+  }
 
   const onSubmit = (evt) => {
     evt.preventDefault();
