@@ -162,8 +162,8 @@ export default function App() {
       });
       
       setArticles(articles.map(a => a.article_id === article_id ? data.article : a));
-      setCurrentArticleId(null); // Reset the current article ID
-      setMessage(data.message); // Set success message
+      setCurrentArticleId(null); 
+      setMessage(data.message); 
     } catch (err) {
       console.log(`Error: ${err.message}`);
       
