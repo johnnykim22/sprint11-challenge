@@ -128,12 +128,12 @@ export default function App() {
           "Authorization": token,
         },
       });
+      setArticles([...articles, data.article]);
+      setMessage(data.message);
       setCurrentArticleId(null);
       
-      setMessage(data.message);
-      setArticles([...articles, data.article]);
-   
-     } catch (err) {
+    } catch (err) {
+      
       console.log(`Error : ${err.message}`);
       
       if (err.response && err.response.status === 401) {
